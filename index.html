@@ -1,0 +1,513 @@
+<html>
+
+<head>
+  <title> Soft-Academy Automatization of Production </title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#myCarousel').carousel({
+        interval: 10000
+      })
+      $('.fdi-Carousel .item').each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length > 0) {
+          next.next().children(':first-child').clone().appendTo($(this));
+        } else {
+          $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+        }
+      });
+    });
+  </script>
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target="navbar" data-offset="60" class="bbody" style="letter-spacing:1px">
+  <div class="navbar">
+    <nav class=" navbar navbar-default navbar-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> </button>
+
+          <a class="navbar-brand" href="myPage">
+          <img id ="logoo" src="images/logo.png">
+        </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" style="margin-top:40px; margin-right:20px">
+          <ul class="nav navbar-nav navbar-right" style="font-size:130%">
+            <li><a href="#scheme"> Схема производства</a></li>
+            <li><a href="#aboutus">О нас </a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#replies">Отзывы</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div id="get" class="container=fluid; text-center" style="padding-bottom:40px">
+      <div class="w3-row" style="padding-top:50px">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="w3-row">
+
+            <div class="col-sm-6; text-center; sentence" style="margin-top:160px">
+              <h2 class="sentence1" style="max-width:100%"><small style="color:#fff" style="letter-spacing:1px"> Автоматизируйте учет мясногo производства! </small></h2>
+            </div>
+
+            <div class="col-sm-6">
+
+              <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate class="form-group" action="send.php" method="post">
+                <input type="text" name="fio" ng-model="user" placeholder="Ваше ФИО:" required>
+                <input type="number" name="phone" placeholder="Телефон:" required>
+                <input type="email" required pattern="^\S+@\S+\.\S+$" placeholder="E-mail:" required>
+                <input type="submit" value="Получить консультацию!       ">
+              </form>
+
+            </div>
+          </div>
+
+
+          <div class="col-sm-2"></div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div style="background-color:#abacb6">
+      <div id="scheme" class="w3-display-container text-center w3-mobile" style="padding-bottom:40px">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <h3 class="chtext">Схема автоматизации учета производства на примере компании "Страганов":</h3>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="container-fluid">
+              <div class="col-sm-2">
+                <img class="img-responsive; w3-image" src="images/icon1.png" style="margin-top:55px">
+              </div>
+              <div class="col-sm-8" style="position:relative;">
+                <div class="step">
+                  <h3 class="hCheme">Прием сырья</h3>
+                  <h4 class="pCheme" style="letter-spacing:1px">В данном модуле автоматически формируется документ «Приходная накладная», фиксируется вес, место пришедшего
+                    сырья. Для каждой новой пришедшей партии сырья задается новая серия. Предусмотрено получение веса как
+                    с подвесных, так и с напольных весов и печать этикетки на каждую взвешенную номенклатуру.Данный этап
+                    является первичным этапом и играет важную роль во всем процессе, так как именно от распознания деффектов
+                    здесь зависит дальнейший процесс работы.</h4>
+                  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" style="textalign:right">Подробнее</a>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('[data-toggle="popover"]').popover();
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="container-fluid">
+              <div class="col-sm-2">
+                <img class="img-responsive; w3-image" src="images/icon2.png" style="margin-top:55px">
+              </div>
+              <div class="col-sm-8" style="position:relative">
+                <div class="step">
+                  <h3 class="hCheme">Передача сырья в производсвто</h3>
+                  <h4 class="pCheme" style="letter-spacing:1px">В данном модуле автоматически формируется документ «Перемещение запасов», фиксируется вес, место и серия
+                    пришедшего сырья. Предусмотрено получение веса, как с подвесных, так и с напольных весов. Серия и место
+                    номенклатуры сканируется из этикетки, полученной при приемке сырья. Затем эти данные используются в дальнейших
+                    этапах обработки сырья, и всю необходимую информацию можно найти в общей базе данных.</h4>
+                  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" style="textalign:right">Подробнее</a>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('[data-toggle="popover"]').popover();
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="container-fluid">
+              <div class="col-sm-2">
+                <img class="img-responsive; w3-image" src="images/icon3.png" style="margin-top:55px">
+              </div>
+              <div class="col-sm-8" style="position:relative">
+                <div class="step">
+                  <h3 class="hCheme">Сборка из запасов сырья в готовую продукцию</h3>
+                  <h4 class="pCheme" style="letter-spacing:1px">На данном этапе пользователь формирует документ «Сборка запасов»,в который выгружает всю номенклатуру из
+                    весов и, в соответствии с этим разрабыьвается план по сборке готовой продукцииv. Дальнейшая сборка зависит
+                    от типа товара, его предназначения, его срока годности и сложности дальнейшей переработки. Здесь для
+                    упрощения производства используется информация, полученная на предущих этапах.</h4>
+                  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" style="textalign:right">Подробнее</a>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('[data-toggle="popover"]').popover();
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="container-fluid">
+              <div class="col-sm-2">
+                <img class="img-responsive; w3-image" src="images/icon4.png" style="margin-top:55px">
+              </div>
+              <div class="col-sm-8" style="position:relative">
+                <div class="step">
+                  <h3 class="hCheme"> Продажа охлажденной продукции</h3>
+                  <h4 class="pCheme" style="letter-spacing:1px">В данном модуле автоматически формируется документ «Перемещение запасов» из склада Холодильник в склад
+                    готовой продукции и документ отправляется всем сотрудникам с целью упрощения процесса переработки информации.
+                    Всю информацию о замороженных продуктах любой работник может найти по коду товара или же по названимю.
+                    Также можно найти группу продукции по категрии или по параметру качества.</h4>
+                  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" style="textalign:right">Подробнее</a>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('[data-toggle="popover"]').popover();
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="container-fluid">
+              <div class="col-sm-2">
+                <img class="img-responsive; w3-image" src="images/icon5.png" style="margin-top:55px">
+              </div>
+              <div class="col-sm-8" style="position:relative">
+                <div class="step">
+                  <h3 class="hCheme">Фасовка</h3>
+                  <h4 class="pCheme " style="letter-spacing:1px">Автоматически формируется документ Перемещение запасов» из склада Холодильник в склад готовой продукции.
+                    В модуле оператору необходимо выбрать номенклатуру, взвесить ее на весах, сканированием указать серию,
+                    после чего зафиксировать вес в документе и распечатать этикетки. Данный процесс сильно упрощается с использованием
+                    программного обеспечения, так как пропадает необходимость хранения информации в бумажном виде и пропадает
+                    человеческий фактор в поиске необходимой информации.</h4>
+                  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" style="textalign:right">Подробнее</a>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('[data-toggle="popover"]').popover();
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="container-fluid">
+              <div class="col-sm-2">
+                <img class="img-responsive; w3-image" src="images/icon6.png" style="margin-top: 45px">
+              </div>
+              <div class="col-sm-8" style="position:relative">
+                <div class="step">
+                  <h3 class="hCheme">Продажа</h3>
+                  <h4 class="pCheme" style="letter-spacing:1px">В модуле оператору нужно выбрать контрагента, и отсканировать этикетки, заранее полученные на участке «Фасовка»,
+                    после чего весь товр будет распределен по клиенторв, включая их контактные данные и сведения о товаре.
+                    </h4>
+                  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Подробнее</a>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('[data-toggle="popover"]').popover();
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutblock">
+      <div id="aboutus" class="container text-center">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8 text-center">
+            <div class="aboutus">
+              <div class="row" style="margin:auto">
+                <div class="col-sm-8 text-center">
+                  <h2 style="opacity:1" style="z-index:2" class="hh"> О компании
+                    <h2>
+                      <h5 style="opacity:100%" style="color:#fff" style="overflow:hidden" class="pp"> Компания “Софтакадемия ” является лидирующей компанией в Оренбурге, предоставляющей автоматизацию учета
+                        прозиводства, внедряя новешие технологии в программное обеспечени компаний.Компания имеет филиалы
+                        в Москве, Санкт-Петербурге и других городах. Компания существует уже на протяжении 4 лет, в течение
+                        которых она обслужила более 150 клиентов, .Компания “Софтакадемия ” является лидирующей компанией
+                        в Оренбурге, предоставляющей автоматизацию учета прозиводства, внедряя новешие технологии в программное
+                        обеспечение компаний.Компания имеет филиалы в Москве, Санкт-Петербурге и других городах. Компания
+                        существует уже на протяжении 4 лет, в течение которых она обслужила более 150 клиентов. </h5>
+                </div>
+                <div class="col-sm-4">
+                  <img class="img-responsive" style="padding-bottom:20px; padding-top:20px" src="images/certif.png">
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="background-color:#fff" style="height:400px">
+      <div id="advantages" class="container-fluid text-center">
+        <h2 class="whyweh"> Почему именно мы?</h2>
+        <div class="row" style="padding-top:50px">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <div class="row" style="border-bottom-style:outset" style="border-bottom:thick outset #161b28">
+              <div class="col-sm-6 text-center">
+                <h3 class="hreasontext"> Оптимизация бизнесс-процессов</h3>
+                <dd style="padding-top:30px" class="preasontext" style="letter-spacing:1px"> - Оперативная информация по фактическим продажам</dd>
+                <dd class="preasontext" style="letter-spacing:1px"> - контроль остатков и движение запасов на складах</dd>
+                <dd class="preasontext" style="letter-spacing:1px"> - контроль потерь на складах </dd>
+                <dd class="preasontext" style="letter-spacing:1px"> - учет продукции по сериям согласно требованию HASP</dd>
+                <dd class="preasontext" style="letter-spacing:1px"> - контроль себестоимость выпускаемой продукции </dd>
+                <dd style="padding-bottom:50px" class="preasontext" style="letter-spacing:1px"> - Минимизация "человеческого фактора</dd>
+              </div>
+
+
+              <div class="col-sm-6">
+                <img class="img-responsive img-rounded" style=" padding-bottom:30px; margin:auto" src="images/optimization.png">
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+
+        </div>
+
+
+        <div class="row" style="padding-top:30px">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <div class="row" style="border-bottom-style:outset" style="border-bottom:thick outset #161b28">
+              <div class="col-sm-6">
+                <img class="img-responsive" src="images/flexibility.png" style="margin:auto">
+              </div>
+              <div class="col-sm-6 text-center" style="margin-bottom:50px">
+                <h3 class="hreasontext"> Гибкость и расширения</h3>
+                <p style="padding-top:30px" class="preasontext"> Программа является гибким программным обеспечением с возможностью расширения функций корректировкой открытых
+                  для пользователей функциональных модулей. Схема подстраивается под каждый индивидуальный проект, что позволяет
+                  обеспечивать максимальную эффективность для клиентов.</p>
+
+              </div>
+
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+
+        </div>
+
+        <div class="row" style="padding-top:30px">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <div class="row" style="margin-bottom:40px">
+              <div class="col-sm-6 text-center" style="margin-bottom:50px">
+                <h3 class="hreasontext"> Оперативность и доступность</h3>
+                <p class="preasontext" style="padding-top:30px"> 1с автоматизация обладает расширенной степенью детализации, поскольку служит базой для решения самых разнообразных
+                  задач, будь то анализ бюджетов, их консолидация, оценка возможности производства новых продуктов или привлечение
+                  заемных денежных средств для финансирования текущей деятельности.</p>
+
+
+              </div>
+
+
+              <div class="col-sm-6 text-center">
+                <img class="img-responsive" src="images/affordability.png" style="margin:auto">
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <div id="replies" class="footer_img">
+      <div class="container">
+        <h5 class="hreplies" style="margin-bottom:30px" class="text-center">Отзывы клиентов</h5>
+      </div>
+
+
+
+
+      <div class="container">
+        <div class="row">
+          <div id="myCarousel" class="carousel fdi-Carousel slide">
+
+            <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
+              <div class="carousel-inner onebyone-carousel">
+                <div class="item active">
+                  <div class="col-sm-4">
+                    <div class="repliesblock">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <img class="img-responsive" src="images/woman.png" class="img-responsive">
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="hcarouseltext" class="text-center" style="text-align:center; padding-top:80px;">Васильев Василий, директор компании "Страганов"</p>
+                        </div>
+                      </div>
+                      <div class="row">
+
+                        <div class="col-sm-12">
+                          <p class="carouseltext">"Компания Софт-Академия профессионально подобрала ждя моей компании максимально эффективное решение
+                            для оптимизации производства моей продукции, чем приятно удивила. Всем советую данную компанию
+                            в решении подобных вопросов!"</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="item">
+                  <div class="col-sm-4">
+                    <div class="repliesblock">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <img class="img-responsive" src="images/woman.png" class="img-responsive">
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="hcarouseltext" class="text-center" style="text-align:center; padding-top:80px;">Васильев Василий, директор компании "Страганов"</p>
+                        </div>
+                      </div>
+                      <div class="row">
+
+                        <div class="col-sm-12">
+                          <p class="carouseltext">"Компания Софт-Академия профессионально подобрала ждя моей компании максимально эффективное решение
+                            для оптимизации производства моей продукции, чем приятно удивила. Всем советую данную компанию
+                            в решении подобных вопросов!"</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <div class="item">
+                  <div class="col-sm-4">
+                    <div class="repliesblock">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <img class="img-responsive" src="images/woman.png" class="img-responsive">
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="hcarouseltext" class="text-center" style="text-align:center; padding-top:80px;">Васильев Василий, директор компании "Страганов"</p>
+                        </div>
+                      </div>
+                      <div class="row">
+
+                        <div class="col-sm-12">
+                          <p class="carouseltext">"Компания Софт-Академия профессионально подобрала ждя моей компании максимально эффективное решение
+                            для оптимизации производства моей продукции, чем приятно удивила. Всем советую данную компанию
+                            в решении подобных вопросов!"</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+              <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
+              <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="w3-container w3-center" style="margin-top:100px; margin-bottom:150px" style="position:center" style="opacity:0.8">
+        <a href="#get" style="opacity:0.8; letter-spacing:1px" class=" w3-button w3-ripple w3-xlarge w3-amber w3-round w3-padding-large"
+          role="button" class="downbuttontext">Закажите консультацию!</a>
+        <!--<button type="button" class="btn btn-warning" style="border-radius:3px">Закажите консультацию!</button> 
+  -->
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6" style="margin-top:80px">
+            <dd class="footertext"> Тел.: (3532)43-18-11</dd>
+            <dd class="footertext"> Факс: (3532) 43-18-11</dd>
+            <dd class="footertext"> Email: info@softacademy56.ru</dd>
+            <dd class="footertext"> Директор: Хлебушкин Сергей Александрович</dd>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+</body>
+
+</html>
